@@ -8,7 +8,7 @@ class Jogo {
         return "Meu Jogo: \n" +
                 "Titulo: $titulo \n" +
                 "Capa:  $capa \n" +
-                "Descricao: $descricao)"
+                "Descricao: $descricao"
     }
 
 }
