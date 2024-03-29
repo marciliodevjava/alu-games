@@ -3,22 +3,31 @@ import java.net.URI
 import java.net.http.HttpClient
 import java.net.http.HttpRequest
 import java.net.http.HttpResponse.BodyHandlers
+import java.util.*
 
 
 fun main(args: Array<String>) {
+
+    val leitura = Scanner(System.`in`)
+    print("Digite um id para buscar: ")
+    val id = leitura.nextLine()
+    val endereco = "https://www.cheapshark.com/api/1.0/games?id=$id"
     val client: HttpClient = HttpClient.newHttpClient()
     val request = HttpRequest.newBuilder()
-        .uri(URI.create("https://www.cheapshark.com/api/1.0/games?id=146"))
+        .uri(URI.create(endereco))
         .build()
 
     val response = client.send(request, BodyHandlers.ofString())
-    var json = response.body()
 
-    val gson = Gson()
-    val meuInfoJogo = gson.fromJson(json, InfoJogo::class.java)
-    val meuJogo = Jogo(
-        meuInfoJogo.info.title, meuInfoJogo.info.thumb, meuInfoJogo.info.steamAppID
-    )
-
-    print(meuJogo)
+    if (response.statusCode() == 200) {
+        var json = response.body()
+        val gson = Gson()
+        val meuInfoJogo = gson.fromJson(json, InfoJogo::class.java)
+        val meuJogo = Jogo(
+            meuInfoJogo.info.title, meuInfoJogo.info.thumb, meuInfoJogo.info.steamAppID
+        )
+        print(meuJogo)
+    } else {
+        print("Jogo não encontrado")
+    }
 }
