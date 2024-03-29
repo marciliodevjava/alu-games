@@ -14,22 +14,8 @@ fun main(args: Array<String>) {
     val response = client.send(request, BodyHandlers.ofString())
     var json = response.body()
 
-    //   print(json)
-    val gson = Gson();
-
-    val meuJogo = Jogo(
-        "Batman: Arkham Asylum Game of the Year Edition",
-        "https:\\/\\/cdn.cloudflare.steamstatic.com\\/steam\\/apps\\/35140\\/capsule_sm_120.jpg?t=1702934705",
-        "Jogo de PC"
-    )
+    val gson = Gson()
+    val meuJogo = gson.fromJson(json, InfoJogo::class.java)
 
     print(meuJogo)
-    print("                      ")
-    val novoJogo = Jogo(
-        capa = "https:\\/\\/cdn.cloudflare.steamstatic.com\\/steam\\/apps\\/35140\\/capsule_sm_120.jpg?t=1702934705",
-        informacao = "Jogo de PC",
-        titulo = "Batman: Arkham Asylum Game of the Year Edition"
-    )
-
-    print(novoJogo)
 }
