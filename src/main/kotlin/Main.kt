@@ -44,7 +44,6 @@ fun main(args: Array<String>) {
     resultado.onFailure {
         print("Jogo não encontrado. Tente outro id.")
     }
-
     resultado.onSuccess {
         print("Você que inserir uma descrição personalizada? S/N: ")
         val descri = leitura.nextLine()
@@ -52,10 +51,12 @@ fun main(args: Array<String>) {
             print("Insira a descição do filme pesonalizada que vc deseja inserir: ")
             val ds = leitura.nextLine()
             meuJogo?.descricao = ds
-            print(meuJogo)
         } else {
             meuJogo?.descricao = meuJogo?.titulo.toString()
-            print(meuJogo)
         }
+        print(meuJogo)
+    }
+    resultado.onSuccess {
+        print("Buscar finalizada com sucesso.")
     }
 }
