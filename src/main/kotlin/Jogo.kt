@@ -4,7 +4,8 @@ data class Jogo(
     var informacao: String
 ) {
 
-    val descricao = informacao
+    var descricao:String = informacao
+
 
     override fun toString(): String {
         return "\nMeu Jogo: \n" +
