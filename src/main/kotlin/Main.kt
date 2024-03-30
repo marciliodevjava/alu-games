@@ -19,15 +19,43 @@ fun main(args: Array<String>) {
 
     val response = client.send(request, BodyHandlers.ofString())
 
-    try {
+//    try {
+//        var json = response.body()
+//        val gson = Gson()
+//        val meuInfoJogo = gson.fromJson(json, InfoJogo::class.java)
+//        val meuJogo = Jogo(
+//            meuInfoJogo.info.title, meuInfoJogo.info.thumb, meuInfoJogo.info.steamAppID
+//        )
+//        print(meuJogo)
+//    } catch (ex: Exception) {
+//        print("Jogo não encontrado. Tente outro id.")
+//    }
+
+    var meuJogo:Jogo? = null
+
+    val resultado = runCatching {
         var json = response.body()
         val gson = Gson()
         val meuInfoJogo = gson.fromJson(json, InfoJogo::class.java)
-        val meuJogo = Jogo(
-            meuInfoJogo.info.title, meuInfoJogo.info.thumb, meuInfoJogo.info.steamAppID
-        )
+        meuJogo = Jogo(meuInfoJogo.info.title, meuInfoJogo.info.thumb, meuInfoJogo.info.steamAppID)
         print(meuJogo)
-    } catch (ex: Exception) {
+    }
+
+    resultado.onFailure {
         print("Jogo não encontrado. Tente outro id.")
+    }
+
+    resultado.onSuccess {
+        print("Você que inserir uma descrição personalizada? S/N: ")
+        val descri = leitura.nextLine()
+        if (descri.equals("S", ignoreCase = true)){
+            print("Insira a descição do filme pesonalizada que vc deseja inserir: ")
+            val ds = leitura.nextLine()
+            meuJogo?.descricao = ds
+            print(meuJogo)
+        } else {
+            meuJogo?.descricao = meuJogo?.titulo.toString()
+            print(meuJogo)
+        }
     }
 }
