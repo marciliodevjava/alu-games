@@ -19,7 +19,7 @@ fun main(args: Array<String>) {
 
     val response = client.send(request, BodyHandlers.ofString())
 
-    if (response.statusCode() == 200) {
+    try {
         var json = response.body()
         val gson = Gson()
         val meuInfoJogo = gson.fromJson(json, InfoJogo::class.java)
@@ -27,7 +27,7 @@ fun main(args: Array<String>) {
             meuInfoJogo.info.title, meuInfoJogo.info.thumb, meuInfoJogo.info.steamAppID
         )
         print(meuJogo)
-    } else {
-        print("Jogo não encontrado")
+    } catch (ex: Exception) {
+        print("Jogo não encontrado. Tente outro id.")
     }
 }
