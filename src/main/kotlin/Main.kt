@@ -31,7 +31,7 @@ fun main(args: Array<String>) {
 //        print("Jogo não encontrado. Tente outro id.")
 //    }
 
-    var meuJogo:Jogo? = null
+    var meuJogo: Jogo? = null
 
     val resultado = runCatching {
         var json = response.body()
@@ -47,7 +47,7 @@ fun main(args: Array<String>) {
     resultado.onSuccess {
         print("Você que inserir uma descrição personalizada? S/N: ")
         val descri = leitura.nextLine()
-        if (descri.equals("S", ignoreCase = true)){
+        if (descri.equals("S", ignoreCase = true)) {
             print("Insira a descição do filme pesonalizada que vc deseja inserir: ")
             val ds = leitura.nextLine()
             meuJogo?.descricao = ds
