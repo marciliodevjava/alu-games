@@ -23,4 +23,6 @@ fun main() {
     }
 
     print(gamer1)
+    gamer1.usuario = "jacque"
+    print(gamer1)
 }
