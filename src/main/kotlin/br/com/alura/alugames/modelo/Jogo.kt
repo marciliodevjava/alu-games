@@ -1,3 +1,5 @@
+package br.com.alura.alugames.modelo
+
 data class Jogo(
     val titulo: String,
     val capa: String,
@@ -8,7 +10,7 @@ data class Jogo(
 
 
     override fun toString(): String {
-        return "\nMeu Jogo: \n" +
+        return "\nMeu br.com.alura.alugames.modelo.Jogo: \n" +
                 "Titulo: $titulo \n" +
                 "Capa:  $capa \n" +
                 "Descricao: $descricao\n"
