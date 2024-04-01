@@ -1,3 +1,7 @@
+package br.com.alura.alugames.principal
+
+import br.com.alura.alugames.modelo.InfoJogo
+import br.com.alura.alugames.modelo.Jogo
 import com.google.gson.Gson
 import java.net.URI
 import java.net.http.HttpClient
@@ -22,13 +26,13 @@ fun main(args: Array<String>) {
 //    try {
 //        var json = response.body()
 //        val gson = Gson()
-//        val meuInfoJogo = gson.fromJson(json, InfoJogo::class.java)
-//        val meuJogo = Jogo(
+//        val meuInfoJogo = gson.fromJson(json, br.com.alura.alugames.modelo.InfoJogo::class.java)
+//        val meuJogo = br.com.alura.alugames.modelo.Jogo(
 //            meuInfoJogo.info.title, meuInfoJogo.info.thumb, meuInfoJogo.info.steamAppID
 //        )
 //        print(meuJogo)
 //    } catch (ex: Exception) {
-//        print("Jogo não encontrado. Tente outro id.")
+//        print("br.com.alura.alugames.modelo.Jogo não encontrado. Tente outro id.")
 //    }
 
     var meuJogo: Jogo? = null
@@ -42,7 +46,7 @@ fun main(args: Array<String>) {
     }
 
     resultado.onFailure {
-        print("Jogo não encontrado. Tente outro id.")
+        print("br.com.alura.alugames.modelo.Jogo não encontrado. Tente outro id.")
     }
     resultado.onSuccess {
         print("Você que inserir uma descrição personalizada? S/N: ")
