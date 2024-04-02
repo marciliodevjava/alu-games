@@ -1,5 +1,6 @@
 package br.com.alura.alugames.modelo
 
+import java.util.*
 import kotlin.random.Random
 
 data class Gamer(var nome: String, var email: String) {
@@ -49,4 +50,22 @@ data class Gamer(var nome: String, var email: String) {
         }
     }
 
+    companion object {
+        fun criarGamer(leitura: Scanner): Gamer {
+            println("Boas vindas ao AluGames! Vamos fazer o seu cadastro. Digite seu nome:")
+            val nome = leitura.nextLine()
+            println("Digite o seu e-mail: ")
+            val email = leitura.nextLine()
+            println("Deseja completar o seu cadastro com usuário e data de nascimento? S/N")
+            val opcao = leitura.nextLine()
+            if (opcao.equals("S", ignoreCase = true)) {
+                println("Digite a sua data de nascimento: ")
+                val data = leitura.nextLine()
+                println("Digite o seu nome de usuário:")
+                val usuario = leitura.nextLine()
+                return Gamer(nome, email, data, usuario)
+            }
+            return Gamer(nome, email)
+        }
+    }
 }
