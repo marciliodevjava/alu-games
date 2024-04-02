@@ -46,5 +46,7 @@ fun main(args: Array<String>) {
         print("Deseja continuar? S/N: ")
         val resposta = leitura.nextLine()
     } while (resposta.equals("S", ignoreCase = true))
+    println("Jogos buscados: ")
+    println(gamer.jogosBuscados)
     print("Buscar finalizada com sucesso.")
 }
