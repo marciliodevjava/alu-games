@@ -14,6 +14,7 @@ data class Gamer(var nome: String, var email: String) {
     var idInterno: String? = null
         private set
 
+    var jogosBuscados = mutableListOf<Jogo>()
 
     constructor(nome: String, email: String, dataNAscimento: String, usuario: String) :
             this(nome, email) {
