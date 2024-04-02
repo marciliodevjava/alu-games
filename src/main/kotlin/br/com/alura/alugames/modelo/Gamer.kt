@@ -19,7 +19,7 @@ data class Gamer(var nome: String, var email: String) {
 
     constructor(nome: String, email: String, dataNAscimento: String, usuario: String) :
             this(nome, email) {
-        this.dataNascimento = dataNascimento
+        this.dataNascimento = dataNAscimento
         this.usuario = usuario
         criarIdInterno()
     }
