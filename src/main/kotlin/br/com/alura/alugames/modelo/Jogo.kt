@@ -10,7 +10,7 @@ data class Jogo(
 
 
     override fun toString(): String {
-        return "\nMeu br.com.alura.alugames.modelo.Jogo: \n" +
+        return "\nJogo: \n" +
                 "Titulo: $titulo \n" +
                 "Capa:  $capa \n" +
                 "Descricao: $descricao\n"
