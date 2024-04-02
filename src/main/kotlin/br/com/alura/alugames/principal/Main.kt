@@ -8,34 +8,38 @@ import java.util.*
 fun main(args: Array<String>) {
 
     val leitura = Scanner(System.`in`)
-    print("Digite um id para buscar: ")
-    val id = leitura.nextLine()
 
-    val buscarApi = ConsulmoApi()
-    val informacaoJogo = buscarApi.buscarApi(id)
-    var meuJogo: Jogo? = null
+    do {
+        print("Digite um id para buscar: ")
+        val id = leitura.nextLine()
 
-    val resultado = runCatching {
-        meuJogo = Jogo(informacaoJogo.info.title, informacaoJogo.info.thumb, informacaoJogo.info.steamAppID)
-        print(meuJogo)
-    }
+        val buscarApi = ConsulmoApi()
+        val informacaoJogo = buscarApi.buscarApi(id)
+        var meuJogo: Jogo? = null
 
-    resultado.onFailure {
-        print("br.com.alura.alugames.modelo.Jogo não encontrado. Tente outro id.")
-    }
-    resultado.onSuccess {
-        print("Você que inserir uma descrição personalizada? S/N: ")
-        val descri = leitura.nextLine()
-        if (descri.equals("S", ignoreCase = true)) {
-            print("Insira a descição do filme pesonalizada que vc deseja inserir: ")
-            val ds = leitura.nextLine()
-            meuJogo?.descricao = ds
-        } else {
-            meuJogo?.descricao = meuJogo?.titulo.toString()
+        val resultado = runCatching {
+            meuJogo = Jogo(informacaoJogo.info.title, informacaoJogo.info.thumb, informacaoJogo.info.steamAppID)
+            print(meuJogo)
         }
-        print(meuJogo)
-    }
-    resultado.onSuccess {
-        print("Buscar finalizada com sucesso.")
-    }
+
+        resultado.onFailure {
+            print("br.com.alura.alugames.modelo.Jogo não encontrado. Tente outro id.")
+        }
+        resultado.onSuccess {
+            print("Você que inserir uma descrição personalizada? S/N: ")
+            val descri = leitura.nextLine()
+            if (descri.equals("S", ignoreCase = true)) {
+                print("Insira a descição do filme pesonalizada que vc deseja inserir: ")
+                val ds = leitura.nextLine()
+                meuJogo?.descricao = ds
+            } else {
+                meuJogo?.descricao = meuJogo?.titulo.toString()
+            }
+            print(meuJogo)
+        }
+
+        print("Deseja continuar? S/N: ")
+        val resposta = leitura.nextLine()
+    } while (resposta.equals("S", ignoreCase = true))
+    print("Buscar finalizada com sucesso.")
 }
