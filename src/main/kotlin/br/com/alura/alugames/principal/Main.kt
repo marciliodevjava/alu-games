@@ -48,5 +48,14 @@ fun main(args: Array<String>) {
     } while (resposta.equals("S", ignoreCase = true))
     println("Jogos buscados: ")
     println(gamer.jogosBuscados)
+
+    println("\nJogos por titulos: ")
+    gamer.jogosBuscados.sortBy {
+        it?.titulo
+    }
+    gamer.jogosBuscados.forEach {
+        println("Titulo: " + it?.titulo)
+    }
+
     print("Buscar finalizada com sucesso.")
 }
