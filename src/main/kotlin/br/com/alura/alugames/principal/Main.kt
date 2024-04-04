@@ -3,7 +3,6 @@ package br.com.alura.alugames.principal
 import br.com.alura.alugames.modelo.Gamer
 import br.com.alura.alugames.modelo.Jogo
 import br.com.alura.alugames.servicos.ConsulmoApi
-import java.lang.IllegalArgumentException
 import java.util.*
 
 
