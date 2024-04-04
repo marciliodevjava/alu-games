@@ -3,6 +3,7 @@ package br.com.alura.alugames.principal
 import br.com.alura.alugames.modelo.Gamer
 import br.com.alura.alugames.modelo.Jogo
 import br.com.alura.alugames.servicos.ConsulmoApi
+import java.lang.IllegalArgumentException
 import java.util.*
 
 
@@ -23,8 +24,11 @@ fun main(args: Array<String>) {
         var meuJogo: Jogo? = null
 
         val resultado = runCatching {
-            meuJogo = Jogo(informacaoJogo.info.title, informacaoJogo.info.thumb, informacaoJogo.info.steamAppID)
-            print(meuJogo)
+            if (informacaoJogo != null) {
+                meuJogo = Jogo(informacaoJogo.info.title, informacaoJogo.info.thumb, informacaoJogo.info.steamAppID)
+                print(meuJogo)
+            }
+            return throw IllegalArgumentException("Jogo não encontrado")
         }
 
         resultado.onFailure {
