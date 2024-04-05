@@ -26,12 +26,13 @@ fun main(args: Array<String>) {
             if (informacaoJogo != null) {
                 meuJogo = Jogo(informacaoJogo.info.title, informacaoJogo.info.thumb, informacaoJogo.info.steamAppID)
                 print(meuJogo)
+            } else {
+                return throw IllegalArgumentException("Jogo não encontrado")
             }
-            return throw IllegalArgumentException("Jogo não encontrado")
         }
 
         resultado.onFailure {
-            print("br.com.alura.alugames.modelo.Jogo não encontrado. Tente outro id.")
+            println("Jogo não encontrado. Tente outro id.")
         }
         resultado.onSuccess {
             print("Você que inserir uma descrição personalizada? S/N: ")
@@ -60,5 +61,17 @@ fun main(args: Array<String>) {
         println("Titulo: " + it?.titulo)
     }
 
+    val jogosFiltrados = gamer.jogosBuscados.filter {
+        it?.titulo?.contains("Batman", ignoreCase = true) ?: false
+    }
+
+    println("Jogos Filtrados")
+    println(jogosFiltrados)
+
+    println("Deseja excluir algum jogo da lista? S/N")
+    val respota = leitura.nextLine()
+    if (respota.equals("S", ignoreCase = true)){
+
+    }
     print("Buscar finalizada com sucesso.")
 }
