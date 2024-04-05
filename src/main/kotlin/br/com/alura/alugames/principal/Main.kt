@@ -75,7 +75,8 @@ fun main(args: Array<String>) {
             println(gamer.jogosBuscados)
             println("Informe a posição do jogo que deseja excluir: ")
             val posicao = leitura.nextInt()
-            gamer.jogosBuscados.removeAt(posicao)
+            val interador = posicao - 1
+            gamer.jogosBuscados.removeAt(interador)
             println("Deseja excluir outro jogo? S/N")
             val ex = leitura.nextLine()
         } while (ex.equals("S", ignoreCase = true))
