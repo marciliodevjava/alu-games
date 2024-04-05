@@ -70,8 +70,18 @@ fun main(args: Array<String>) {
 
     println("Deseja excluir algum jogo da lista? S/N")
     val respota = leitura.nextLine()
-    if (respota.equals("S", ignoreCase = true)){
-
+    if (respota.equals("S", ignoreCase = true)) {
+        do {
+            println(gamer.jogosBuscados)
+            println("Informe a posição do jogo que deseja excluir: ")
+            val posicao = leitura.nextInt()
+            gamer.jogosBuscados.removeAt(posicao)
+            println("Deseja excluir outro jogo? S/N")
+            val ex = leitura.nextLine()
+        } while (ex.equals("S", ignoreCase = true))
     }
+
+    println("Jogos buscados: ")
+    println(gamer.jogosBuscados)
     print("Buscar finalizada com sucesso.")
 }
