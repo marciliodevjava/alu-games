@@ -3,6 +3,7 @@ package br.com.alura.alugames.principal
 import br.com.alura.alugames.modelo.Gamer
 import br.com.alura.alugames.modelo.Jogo
 import br.com.alura.alugames.servicos.ConsulmoApi
+import transformarIdade
 import java.util.*
 
 
@@ -13,6 +14,7 @@ fun main(args: Array<String>) {
     val gamer = Gamer.criarGamer(leitura)
     println("Cadastro concuildo com sucesso. Dados do Gamer:")
     println(gamer)
+    println("Idade do Gammer: " + gamer.dataNascimento?.transformarIdade())
 
     do {
         print("Digite um id para buscar: ")
