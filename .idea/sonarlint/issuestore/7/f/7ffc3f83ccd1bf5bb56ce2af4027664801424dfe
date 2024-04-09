@@ -1,0 +1,2 @@
+
+kotlin:S6532"]Replace this if expression with require(!(nome.isNullOrBlank())) { "Nome estÃ¡ em branco." }.(Æ’€äúÿÿÿÿ8ÏÊı‚ê1
