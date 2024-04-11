@@ -19,8 +19,6 @@ e
 5src/main/kotlin/br/com/alura/alugames/modelo/Gamer.kt,7\f\7ffc3f83ccd1bf5bb56ce2af4027664801424dfe
 m
 =src/main/kotlin/br/com/alura/alugames/principal/TesteGamer.kt,b\4\b46b2b5eda8ec6cec0029e62d0258e1a8097ceac
-p
-@src/main/kotlin/br/com/alura/alugames/utilitario/StringExtension,3\0\307cabd61b9e28f168ded73ba659f6b17c9ba0f5
 s
 Csrc/main/kotlin/br/com/alura/alugames/utilitario/StringExtension.kt,1\b\1b7e251b471fde2a6bef8da0328f2f77719daf7a
 Å
@@ -32,15 +30,11 @@ G.idea/sonarlint/issuestore/b/4/b46b2b5eda8ec6cec0029e62d0258e1a8097ceac,6\e\6e
 Å
 Q.idea/sonarlint/securityhotspotstore/b/4/b46b2b5eda8ec6cec0029e62d0258e1a8097ceac,c\b\cbace432892d0bd4cbb59a6c42ec5d1e9d971e83
 w
-G.idea/sonarlint/issuestore/3/0/307cabd61b9e28f168ded73ba659f6b17c9ba0f5,c\5\c57fbdad97c4d8f353f3fe0be4e0e2154c57db37
-w
 G.idea/sonarlint/issuestore/8/3/83584f3739784805363e3689913ddf6aca334b2f,1\1\11974a75703041db2d137abfe8d4ed9a153a1f50
 w
 G.idea/sonarlint/issuestore/4/4/44f1163e8d2173c852127f711023f4146264c7e6,6\5\65713a676949c4fd5286205b92eb011913dc5973
 w
 G.idea/sonarlint/issuestore/4/4/44f0de5234f899d1e49d9339c306dd8e2e35b194,2\d\2d309904862d2f23bdfd3331eb673c5bd40744dc
-Å
-Q.idea/sonarlint/securityhotspotstore/3/0/307cabd61b9e28f168ded73ba659f6b17c9ba0f5,f\9\f945080cebcbbb5b442c85fae8c8bf010041a236
 Å
 Q.idea/sonarlint/securityhotspotstore/4/4/44f1163e8d2173c852127f711023f4146264c7e6,6\6\664cf38d562c9e6272378cc3d355ef6714ae7f32
 Å
@@ -51,3 +45,5 @@ Q.idea/sonarlint/securityhotspotstore/2/f/2f9ae271f96b0f758c4ec5e17247e5778ff6fe
 Q.idea/sonarlint/securityhotspotstore/1/b/1b7e251b471fde2a6bef8da0328f2f77719daf7a,e\7\e7f4ce09393eb5f08ac45bf8b83fab29b3d702a8
 Å
 Q.idea/sonarlint/securityhotspotstore/8/3/83584f3739784805363e3689913ddf6aca334b2f,8\e\8e266e9a5fd57ccf76074f4d1071f29a545c3aef
+l
+<src/main/kotlin/br/com/alura/alugames/modelo/InfoGameJson.kt,d\e\de6137c35c069f943c8844dec5d9c17cdffacd47
