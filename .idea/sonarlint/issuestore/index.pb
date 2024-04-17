@@ -47,3 +47,5 @@ Q.idea/sonarlint/securityhotspotstore/1/b/1b7e251b471fde2a6bef8da0328f2f77719daf
 Q.idea/sonarlint/securityhotspotstore/8/3/83584f3739784805363e3689913ddf6aca334b2f,8\e\8e266e9a5fd57ccf76074f4d1071f29a545c3aef
 l
 <src/main/kotlin/br/com/alura/alugames/modelo/InfoGameJson.kt,d\e\de6137c35c069f943c8844dec5d9c17cdffacd47
+l
+<src/main/kotlin/br/com/alura/alugames/principal/TesteJson.kt,4\2\421e7d8800053f8f26ea9a4a2f6380977390d6ed

@@ -1,5 +1,6 @@
 package br.com.alura.alugames.servicos
 
+import br.com.alura.alugames.modelo.Gamer
 import br.com.alura.alugames.modelo.InfoGameJson
 import br.com.alura.alugames.modelo.InfoJogo
 import com.google.gson.Gson
@@ -43,6 +44,10 @@ class ConsulmoApi {
         val meuGamerTipo = object : TypeToken<List<InfoGameJson>>() {}.type
 
         val listaGamer: List<InfoGameJson> = gson.fromJson(json, meuGamerTipo)
+
+        listaGamer.map {
+            infoGameJson -> Gamer(infoGameJson.nome, infoGameJson.email, infoGameJson.dataNascimento,infoGameJson.usuario)
+        }
         return listaGamer
     }
 }
