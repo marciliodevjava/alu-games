@@ -28,7 +28,7 @@ class ConsulmoApi {
         return meuInfoJogo
     }
 
-    fun buscaGamers(): List<InfoGameJson> {
+    fun buscaGamers(): List<Gamer> {
         val endereco = "https://raw.githubusercontent.com/jeniblodev/arquivosJson/main/gamers.json"
 
         val client: HttpClient = HttpClient.newHttpClient()
@@ -45,9 +45,9 @@ class ConsulmoApi {
 
         val listaGamer: List<InfoGameJson> = gson.fromJson(json, meuGamerTipo)
 
-        listaGamer.map {
+        val listaGamerConvertida = listaGamer.map {
             infoGameJson -> Gamer(infoGameJson.nome, infoGameJson.email, infoGameJson.dataNascimento,infoGameJson.usuario)
         }
-        return listaGamer
+        return listaGamerConvertida
     }
 }
